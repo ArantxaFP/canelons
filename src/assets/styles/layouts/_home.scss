@@ -66,9 +66,14 @@ body {
 /* _____________________
 VARIABLES              
 _______________________ */
+
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --primary-color: #190302;
-  --accent-color: #9e8267;
+  --accent-color: #fff;
   --text-color: #333;
   --font-main: 'Helvetica Neue', sans-serif;
 }
@@ -85,7 +90,18 @@ _______________________ */
 /* _______________________
 BASE                     
  _______________________ */
-body {
+
+ .onepage-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  
+  text-align: center;
+  background-color: #fff;
+ 
+}
+
+ body {
   margin: 0;
   color: var(--text-color);
   background-color: var(--accent-color);
@@ -101,6 +117,7 @@ body {
 /* ______________________
 LAYOUT                  
 _______________________ */
+
 .nav {
   background-color: var(--primary-color);
   padding: 1rem;
@@ -119,7 +136,7 @@ _______________________ */
 }
 
 .nav__item a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
