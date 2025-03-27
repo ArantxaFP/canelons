@@ -1,3 +1,5 @@
+/* Plantilla UOC d'inici 
+
 * {
   box-sizing: border-box;
 }
@@ -55,3 +57,139 @@ body {
   font-size: 0.75rem;
   text-align: center;
 }
+
+*/
+
+
+/* Estratègia escollida: BEM + 7-1 Architecture amb Sass */
+
+/* _____________________
+VARIABLES              
+_______________________ */
+:root {
+  --primary-color: #190302;
+  --accent-color: #9e8267;
+  --text-color: #333;
+  --font-main: 'Helvetica Neue', sans-serif;
+}
+
+/* _______________________ 
+FUNCIONS SCSS (SASS)   
+_______________________ */
+
+
+@function rem($px) {
+  @return $px / 16 * 1rem;
+} 
+
+/* _______________________
+BASE                     
+ _______________________ */
+body {
+  margin: 0;
+  color: var(--text-color);
+  background-color: var(--accent-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ______________________
+LAYOUT                  
+_______________________ */
+.nav {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav__item a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    color: var(--text-color);
+  }
+}
+
+.section__title {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.section__list,
+.section__steps {
+  padding-left: 1.5rem;
+}
+
+/* ______________________ 
+COMPONENTS              
+_______________________ */
+/* BEM per variants */
+.variants__list li {
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav__list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 1rem;
+  }
+}
+
+/* _______________________
+ UTILITATS                
+ _______________________ */
+.text--center {
+  text-align: center;
+}
+
+.section {
+  &--spaced {
+    margin-top: 2rem;
+  }
+}
+

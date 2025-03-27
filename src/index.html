@@ -1,31 +1,240 @@
 <!DOCTYPE html>
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
-  </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
-        <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss"><!-- do not remove this line! -->
+  <title>UOC Boilerplate</title>
+</head>
+
+<body>
+  <div class="uoc-container">
+    <picture>
+      <source srcset="./assets/images/logo.png?as=webp&width=350" type="image/webp" />
+      <img src="./assets/images/logo.png?width=350" alt="Universitat Oberta de Catalunya" class="uoc-logo" />
+    </picture>
+    <h1 class="uoc-title">Hello, UOC!</h1>
+    <nav class="nav">
+      <i class="nav__toggle fa fa-bars" aria-hidden="true"></i>
+      <ul class="nav__list">
+        <li class="nav__item"><a href="#historia">Història dels canelons</a></li>
+        <li class="nav__item"><a href="#recepta">Recepta tradicional</a></li>
+        <li class="nav__item"><a href="#variants">Variants conegudes</a></li>
+        <li class="nav__item"><a href="#canelons-xefs">Receptes de xefs reconeguts</a></li>
+        <li class="nav__item"><a href="#millors-canelons">On menjar-ne</a></li>
+        <li class="nav__item"><a href="#fonts">Fonts</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero" class="section">
+      <h1 class="hero__title">Els canelons de Barcelona</h1>
+      <h2 class="hero__subtitle">Més que un plat: una tradició farcida de records.</h2>
+    </section>
+
+    <section id="historia" class="section">
+      <h2 class="section__title">Història dels canelons a Catalunya</h2>
+      <p>Els canelons arriben a Catalunya al segle XIX de la mà dels cuiners italians que treballaven a cases burgeses.
+        Però és aquí on adopten una nova identitat: es fan amb carn rostida del dia anterior, coberts de beixamel suau i
+        gratinats fins a daurar-se.</p>
+      <p>Amb el temps, esdevenen el plat estrella del dia de Sant Esteve (26 de desembre), quan les famílies aprofiten
+        les restes del rostit de Nadal. Una tradició d’aprofitament que ha esdevingut una joia gastronòmica.</p>
+      <p>Els canelons són el típic plat que té un gust diferent a cada casa, perquè la barreja de carns del farcit
+        sempre té un toc personal que passa de generació en generació.</p>
+    </section>
+
+    <section id="recepta" class="section">
+      <h2 class="section__title">Recepta tradicional de canelons</h2>
+      <p>Fer uns bons canelons és un acte d’amor (i una mica de paciència). Aquí tens la base tradicional per la recepta
+        de la mare dels Roca:</p>
+
+      <h3 class="section__subtitle">Ingredients per a 4 persones</h3>
+      <ol class="section__list">
+        <li>300 g de carn magra de vedella i de porc</li>
+        <li>100 g de pit de pollastre</li>
+        <li>50 g de fetge de pollastre</li>
+        <li>2 cebes</li>
+        <li>2 grans d'all</li>
+        <li>Un raig de vi ranci</li>
+        <li>Un raig de conyac</li>
+        <li>1 tomàquet madur</li>
+        <li>Oli d’oliva verge</li>
+        <li>2 llesques de pa (només la molla)</li>
+        <li>1 litre de llet</li>
+        <li>30 g de mantega</li>
+        <li>30 g de farina</li>
+        <li>Sal</li>
+        <li>Pebre blanc</li>
+        <li>Nou moscada</li>
+        <li>12 làmines de pasta de caneló</li>
+        <li>125 g de formatge que es fongui bé, com el mató o l'emmental</li>
+      </ol>
+
+      <h3 class="section__subtitle">Preparació</h3>
+      <ol class="section__steps">
+        <li>Tallem tota la carn a daus i la daurem en una cassola amb un raig d'oli d’oliva.</li>
+        <li>A mitja cocció, hi afegim els alls pelats i tallats a làmines, i la ceba ratllada. Ho fem coure lentament
+          uns 40 minuts.</li>
+        <li>Ho remullem amb vi ranci i conyac i deixem evaporar l'alcohol.</li>
+        <li>Afegim el fetge i el fem coure. Incorporem el tomàquet ratllat i deixem concentrar.</li>
+        <li>Afegim la molla de pa remullada amb llet. Triturem tot plegat i ajustem de sal.</li>
+        <li>Bullim les làmines segons les instruccions i les estenem sobre un drap blanc.</li>
+        <li>Posem una cullerada de carn a cada làmina i les enrotllem.</li>
+        <li>Preparem la beixamel amb mantega, farina i llet. Amanim amb sal, pebre i nou moscada.</li>
+        <li>En una safata, posem una capa de beixamel, els canelons i la resta de beixamel a sobre.</li>
+        <li>Acabem amb formatge ratllat i unes boletes de mantega.</li>
+        <li>Gratinem al forn a 200 °C fins que quedin daurats.</li>
+      </ol>
+    </section>
+
+    <section id="variants" class="section">
+      <h3 class="section__subtitle">Variants més conegudes de receptes de canelons</h3>
+      <ul class="variants__list">
+        <li><strong>Canelons de rostit tradicional:</strong> el clàssic de Sant Esteve.</li>
+        <li><strong>Canelons de bolets i tòfona:</strong> el toc gourmet de la muntanya.</li>
+        <li><strong>Canelons de marisc:</strong> reinterpretació mediterrània i festiva.</li>
+        <li><strong>Canelons vegetarians:</strong> farcits de verdures rostides i ricotta.</li>
+        <li><strong>Canelons “fusion”:</strong> del pulled pork als canelons de curry, la creativitat no té límits.</li>
+      </ul>
+    </section>
+
+    <section id="canelons-xefs" class="section">
+      <h2 class="section__title">Receptes de xefs reconeguts</h2>
+      <p>Els canelons han captivat alguns dels millors xefs del país. Aquestes són les seves versions més emblemàtiques
+        i on les pots trobar:</p>
+
+      <ol class="section__list">
+        <li>
+          <h3 class="section__subtitle">Carme Ruscalleda – Canelons de festa major</h3>
+          <p>Una versió refinada, amb carn de rostit i beixamel suau, però amb detalls sofisticats com la tòfona i una
+            presentació elegant. Una oda al caneló clàssic amb sensibilitat contemporània.</p>
+          <p>Una recepta clàssica portada a l’excel·lència, amb un toc de tòfona i una beixamel suau i elegant.</p>
+          <p><strong>Font:</strong> Canal YouTube El Periódico –
+            <a href="https://youtu.be/7ksoHXcrKdQ" target="_blank">Carme Ruscalleda ens prepara la seva recepta
+              llegendària</a>
+          </p>
+        </li>
+
+        <li>
+          <h3 class="section__subtitle">Ferran Adrià – Canelons de rostit estil El Bulli</h3>
+          <p>El mestre del Bulli proposa una versió que manté l’essència tradicional però treballada amb tècniques
+            d’alta cuina: textures més fines, concentració de sabors, i una beixamel lleugera com l’aire.</p>
+          <p>Una aproximació moderna al caneló tradicional amb tècnica d’alta cuina i molt de respecte pel sabor.</p>
+          <p><strong>Font:</strong> Arxiu El Bulli / Llibre <em>El Bulli 2005–2011</em> –
+            <a href="https://elbullifoundation.com/elbullistore/producto/elbulli-2005-2011/" target="_blank">Veure
+              llibre</a>
+          </p>
+        </li>
+
+        <li>
+          <h3 class="section__subtitle">Nandu Jubany – Canelons de rostit amb tòfona negra</h3>
+          <p>Un plat icònic del seu restaurant Can Jubany, on la carn es desfà a la boca i la beixamel porta un toc de
+            tòfona negra fresca. Pura elegància rural.</p>
+          <p>Els clàssics de casa seva: rostit melós, beixamel untuosa i un final trufat que enamora.</p>
+          <p><strong>Font:</strong>
+            <a href="https://www.rac1.cat/gastronomia/20221223/103638/ingredient-no-pot-faltar-canelons-secrets-nandu-jubany-carles-gaig.html"
+              target="_blank">RAC1 – Secrets de Nandu Jubany</a>
+          </p>
+        </li>
+
+        <li>
+          <h3 class="section__subtitle">Ada Parellada – Canelons casolans</h3>
+          <p>La xef del restaurant Semproniana proposa una versió tradicional, lleugera i saludable.</p>
+          <p><strong>Font:</strong>
+            <a href="https://www.elnacional.cat/ca/gourmeteria/articles/com-fer-canelons-casolans-bonissims-consells-ada-parellada_1334467_102.html"
+              target="_blank">El Nacional – Consells d’Ada Parellada</a>
+          </p>
+        </li>
+
+        <li>
+          <h3 class="section__subtitle">Joan Roca – Canelons de rostit “com els de la mare”</h3>
+          <p>Un homenatge a la recepta de la seva mare, però amb el segell d’El Celler de Can Roca: coccions precises,
+            farcit melós, i un equilibri perfecte entre tradició i innovació.</p>
+          <p>Una recepta molt personal que uneix tradició i sensibilitat culinària.</p>
+          <p><strong>Font:</strong>
+            <a href="https://www.rac1.cat/gastronomia/20241224/472330883223/recepta-com-fer-canelons-sant-esteve-mare-germans-roca-montserrat-fontane-llibre.html"
+              target="_blank">RAC1 – Recepta dels germans Roca</a>
+          </p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2 class="hero__subtitle">Galeria de canelons</h2>
+      <p>Canelons al forn, detalls del farcit, presentacions de restaurant.</p>
+    </section>
+
+    <section id="millors-canelons" class="section">
+      <h2 class="hero__subtitle">Els millors canelons de Barcelona</h2>
+      <p>T’agrada tastar els millors de la ciutat? Aquí tens una ruta canelonera que no falla:</p>
+      <ol class="section__list">
+        <li>
+          <a href="https://www.bancodeboquerones.com/restaurante/casa-leopoldo/" target="_blank"><strong>Casa
+              Leopoldo</strong></a> – Tradició viva del Raval amb uns canelons de rostit inoblidables.
+        </li>
+        <li>
+          <a href="https://culleretes.com/" target="_blank"><strong>Can Culleretes</strong></a> – El restaurant més
+          antic de Barcelona, amb recepta clàssica centenària.
+        </li>
+        <li>
+          <a href="https://www.gresca.rest/" target="_blank"><strong>Gresca</strong></a> – Canelons reinventats amb toc
+          de cuina d’autor.
+        </li>
+        <li>
+          <a href="https://calisidre.com/" target="_blank"><strong>Ca l’Isidre</strong></a> – Canelons de festa major:
+          elaborats, suaus i amb beixamel de somni.
+        </li>
+        <li>
+          <a href="https://www.bardelpla.cat/" target="_blank"><strong>Bar del Pla</strong></a> – Petits, intensos i amb
+          aquell gust de casa que enamora.
+        </li>
+      </ol>
+
+      <p>Si prefereixes gaudir-ne a casa, aquí pots comprar els millors canelons de Barcelona sense moure't del sofà:
+        <a href="https://www.canelonsbarcelona.com/280-canelons" target="_blank"><strong>Crossandra, la botiga dels
+            canelons</strong></a>
+        <a href="https://www.ametllerorigen.com/canelons-nandu-jubany-nadal" target="_blank"><strong></strong> Canelons
+          Nandu Jubany</strong></a>
       </p>
+    </section>
 
-      <i class="fas fa-university"></i>
 
-      
-    </div>
-    <include src="./views/footer.html"></include>
-    <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
-  </body>
+    <section id="fonts" class="section">
+      <h2 class="hero__subtitle">Fonts emprades per documentació i fototeca</h2>
+
+      <h3 class="section__subtitle">Documentació</h3>
+      <ul>
+        <li>Llibre <em>“La cuina catalana”</em> de Josep Lladonosa</li>
+        <li>Publicacions gastronòmiques de Time Out Barcelona</li>
+        <li>Webs oficials dels restaurants</li>
+        <li><a
+            href="https://www.rac1.cat/gastronomia/20241224/472330883223/recepta-com-fer-canelons-sant-esteve-mare-germans-roca-montserrat-fontane-llibre.html"
+            target="_blank">Recepta de RAC1</a></li>
+      </ul>
+
+      <h3 class="section__subtitle">Fonts d’imatges</h3>
+      <ul>
+        <li><a href="https://www.flickr.com/photos/jlastras/6303748806" target="_blank">Flickr – Foto de jlastras</a>
+        </li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Canelones_gratinados.jpg" target="_blank">Wikimedia –
+            Canelons gratinats</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Raci%C3%B3n_de_canelones.jpg" target="_blank">Wikimedia –
+            Ració de canelons</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Canelones_de_carne.jpg" target="_blank">Wikimedia –
+            Canelons de carn</a></li>
+        <li><a href="https://www.moncloa.com/2023/05/20/canelones-abuela-berasategui-1992776/8/" target="_blank">Moncloa
+            – Canelons de l'àvia Berasategui</a></li>
+        <li><a href="https://www.abc.es/recetasderechupete/canelones-de-lacon-con-grelos/12481/" target="_blank">ABC –
+            Canelons de lacón amb grelos</a></li>
+      </ul>
+    </section>
+
+
+
+  </div>
+  <include src="./views/footer.html"></include>
+  <script type="module" src="./assets/scripts/main.js"></script><!-- do not remove this line! -->
+</body>
+
 </html>
