@@ -234,3 +234,54 @@ RESPONSIVE
     padding: 1rem;
   }
 }
+
+/************************
+CARRUSEL - BEM + Swiper
+************************/
+.carousel {
+  margin-top: 3rem;
+  text-align: center;
+
+  &__swiper {
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
+    &.swiper-slide-active {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &__button--prev,
+  &__button--next {
+    color: var(--primary-color);
+    --swiper-navigation-size: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .swiper-slide {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    &__button--prev,
+    &__button--next {
+      display: block;
+    }
+  }
+}

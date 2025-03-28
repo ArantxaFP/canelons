@@ -18,7 +18,9 @@
  // @import "some-node-module";
  // @import "@some-company/some-node-module";
  @import "npm:@fortawesome/fontawesome-free/css/all.css";
- 
+
+ @import "npm:swiper/swiper-bundle.min.css";
+
  /**
   * Import layouts
   * It's a best practice to use a different partial for each page
