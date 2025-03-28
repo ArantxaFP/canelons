@@ -1,10 +1,8 @@
 @import '../variables';
 
-/* Estratègia escollida: BEM + 7-1 Architecture amb Sass */
-
-/************************
-RESET I CONFIGURACIÓ BASE
-************************/
+/* -----------------------------------------
+1. RESET I VARIABLES
+----------------------------------------- */
 * {
   box-sizing: border-box;
 }
@@ -15,27 +13,15 @@ RESET I CONFIGURACIÓ BASE
   --text-color: #333;
 }
 
-/************************ 
-FUNCIONS SCSS (SASS)   
-***********************/
-@function rem($px) {
-  @return $px / 16 * 1rem;
-} 
-
-/************************
-LAYOUT BÀSIC
-************************/
-.page__container {
-  margin: auto;
-  padding: 2rem;
-  text-align: center;
-  background-color: #fff;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
   color: $text-color;
-  background-color: $accent-color;
+  background-color: var(--accent-color);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -45,10 +31,64 @@ body {
   line-height: $line-height-base;
 }
 
-/************************
-TIPOGRAFIA
-************************/
-h1, h2 {
+.page__container {
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* Exemple de funció SCSS */
+@function rem($px) {
+  @return $px / 16 * 1rem;
+}
+
+/* -----------------------------------------
+2. SELECTORS BASE (MÉS GENERALS)
+----------------------------------------- */
+
+
+.section__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: $font-family-heading;
+  color: $heading-color;
+}
+
+/* (b) Altres elements base */
+li {
+  margin-bottom: 1rem;
+  font-family: $font-family-body;
+  color: $text-color;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-family: $font-family-body;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+p {
+  font-family: $font-family-body;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-color;
+  margin-bottom: 1rem;
+}
+
+
+/* -----------------------------------------
+3. TIPOGRAFIA I TEXT
+----------------------------------------- */
+h1,
+h2 {
   font-family: $font-family-heading;
   color: $heading-color;
 }
@@ -81,23 +121,9 @@ h1, h2 {
   text-align: center;
 }
 
-/************************
-ENLLAÇOS
-************************/
-a {
-  color: var(--primary-color);
-  text-decoration: underline;
-  font-family: $font-family-body;
-
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-}
-
-/************************
-NAV (MENÚ)
-************************/
+/* -----------------------------------------
+4. NAV (MENÚ)
+----------------------------------------- */
 .nav {
   background-color: var(--primary-color);
   padding: 1rem;
@@ -155,9 +181,9 @@ NAV (MENÚ)
   }
 }
 
-/************************
-HERO
-************************/
+/* -----------------------------------------
+5. HERO
+----------------------------------------- */
 .hero {
   position: relative;
   width: 100%;
@@ -175,7 +201,7 @@ HERO
   }
 
   &__overlay {
-    background-color: rgba(255, 255, 255, 0.6); // o rgba(0,0,0,0.5) si el text és blanc
+    background-color: rgba(255, 255, 255, 0.6);
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
@@ -191,7 +217,6 @@ HERO
 
   &__subtitle {
     font-size: 1.5rem;
-    color: $text-color;
     font-family: $font-family-body;
   }
 
@@ -208,25 +233,18 @@ HERO
   }
 }
 
-/************************
-SECCIONS
-************************/
+/* -----------------------------------------
+6. SECCIONS (BASE)
+----------------------------------------- */
 .section {
-  width: 95%; 
-  margin: 0 auto; // Centra la secció h
+  width: 95%;
+  margin: 0 auto;
 
   &__title {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    color: $heading-color;
     font-family: $font-family-heading;
-  }
-
-  &__subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
     color: $heading-color;
-    font-family: $font-family-heading;
   }
 
   &__list,
@@ -239,49 +257,23 @@ SECCIONS
   }
 
   @media (min-width: 768px) {
-    max-width: 80%; 
+    max-width: 80%;
   }
 }
 
-
-/************************
-COMPONENTS
-************************/
-.variants__list li {
-  margin-bottom: 1rem;
-}
-
-/************************
-RESPONSIVE
-************************/
 @media (max-width: 768px) {
-  .nav__list {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .hero__title {
-    font-size: 1.5rem;
-  }
-
-  .hero__subtitle {
-    font-size: 1rem;
-  }
-
   .section {
     padding: 1rem;
   }
 }
 
-
-
-/************************
-SECCIÓ HISTÒRIA RESPONSIVE ORDRE INVERTIT
-************************/
+/* -----------------------------------------
+7. SECCIÓ HISTÒRIA
+----------------------------------------- */
 .section--historia {
   padding: 2rem 0;
 
-  &__wrapper {
+  .section__wrapper {
     width: 95%;
     margin: 0 auto;
     padding: 0 1rem;
@@ -308,7 +300,7 @@ SECCIÓ HISTÒRIA RESPONSIVE ORDRE INVERTIT
   }
 
   .section__image {
-    order: 2; 
+    order: 2;
     flex: 1;
     display: flex;
     justify-content: center;
@@ -321,30 +313,24 @@ SECCIÓ HISTÒRIA RESPONSIVE ORDRE INVERTIT
     }
 
     @media (min-width: 768px) {
-      order: 1; 
+      order: 1;
     }
   }
 
   .section__text {
-    order: 1; 
+    order: 1;
     flex: 1;
     text-align: left;
 
     @media (min-width: 768px) {
-      order: 2; 
-    }
-
-    p {
-      margin-bottom: 1rem;
+      order: 2;
     }
   }
 }
 
-
-/************************
-SECCIÓ RECEPTA
-************************/
-
+/* -----------------------------------------
+8. SECCIÓ RECEPTA
+----------------------------------------- */
 .section--recepta {
   padding: 2rem 0;
 
@@ -380,21 +366,8 @@ SECCIÓ RECEPTA
     flex: 1;
     text-align: left;
 
-    .section__subtitle {
-      margin-top: 2rem;
-      font-size: 1.5rem;
-      color: $heading-color;
-      font-family: $font-family-heading;
-    }
-
     .section__list {
       padding-left: 1.5rem;
-
-      li {
-        margin-bottom: 0.5rem;
-        font-family: $font-family-body;
-        color: $text-color;
-      }
     }
   }
 
@@ -413,13 +386,9 @@ SECCIÓ RECEPTA
   }
 }
 
-
-
-
-/************************
-SECCIÓ VARIANTS RECEPTES
-************************/
-
+/* -----------------------------------------
+9. SECCIÓ VARIANTS
+----------------------------------------- */
 .section--variants {
   padding: 2rem 0;
 
@@ -444,29 +413,6 @@ SECCIÓ VARIANTS RECEPTES
     }
   }
 
-  .section__text {
-    order: 1;
-    flex: 1;
-    text-align: left;
-
-    @media (min-width: 768px) {
-      order: 2;
-    }
-
-    .section__subtitle {
-      margin-bottom: 1rem;
-    }
-
-    .variants__list {
-      padding-left: 1.5rem;
-
-      li {
-        margin-bottom: 0.75rem;
-        line-height: 1.6;
-      }
-    }
-  }
-
   .section__image {
     order: 2;
     flex: 1;
@@ -484,15 +430,164 @@ SECCIÓ VARIANTS RECEPTES
       order: 1;
     }
   }
+
+  .section__text {
+    order: 1;
+    flex: 1;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      order: 2;
+    }
+
+   
+  }
 }
 
 
+/* -----------------------------------------
+10. SECCIÓ MILLORS RESTAURANTS
+----------------------------------------- */
+.section--millors {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to bottom, #EDE8D0, #FDFBD4);
 
+  .section__wrapper {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 
+    @media (min-width: 768px) {
+      width: 80%;
+    }
 
-/************************
-CARRUSEL
-************************/
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      font-family: $font-family-heading;
+      color: $heading-color;
+    }
+
+    .section__list {
+      margin-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* -----------------------------------------
+11. SECCIÓ FONTS / DOCUMENTACIÓ
+----------------------------------------- */
+.section--fonts {
+  background-color: #f0f0f0;
+  padding: 3rem 1rem;
+
+  .section__wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .section__block {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .hero__subtitle {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-family: $font-family-heading;
+    color: $heading-color;
+  }
+
+  .section__subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-family: $font-family-heading;
+    color: $heading-color;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.75rem;
+      font-family: $font-family-body;
+      font-size: 1rem;
+
+      a {
+        color: var(--primary-color);
+        text-decoration: underline;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  p {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+
+/* -----------------------------------------
+12. OVERRIDES AFEGITS
+----------------------------------------- */
+/* SECCIÓ RECEPTA */
+
+.section--recepta .section__text .section__list li {
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* MILLORS RESTAURANTS */
+.section--millors .section__wrapper .section__list a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.section--millors .section__wrapper .section__list a:hover,
+.section--millors .section__wrapper .section__list a:focus {
+  text-decoration: none;
+}
+
+.section--millors .section__wrapper p {
+  font-family: $font-family-body;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text-color;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* -----------------------------------------
+13. CARRUSEL
+----------------------------------------- */
 .carousel {
   margin-top: 3rem;
   text-align: center;
@@ -500,20 +595,6 @@ CARRUSEL
   &__swiper {
     width: 100%;
     padding: 2rem 0;
-  }
-
-  // Classes externes de Swiper (no segueixen BEM)
-  .swiper-slide { // stylelint-disable-line selector-class-pattern
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.5;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-
-    &.swiper-slide-active { // stylelint-disable-line selector-class-pattern
-      transform: scale(1.1);
-      opacity: 1;
-    }
   }
 
   &__image {
@@ -530,14 +611,31 @@ CARRUSEL
   }
 
   @media (max-width: 768px) {
-    .swiper-slide { // stylelint-disable-line selector-class-pattern
-      opacity: 1;
-      transform: scale(1);
-    }
-
     &__button--prev,
     &__button--next {
       display: block;
     }
   }
 }
+
+/* stylelint-disable selector-class-pattern */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .swiper-slide {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* stylelint-enable selector-class-pattern */
