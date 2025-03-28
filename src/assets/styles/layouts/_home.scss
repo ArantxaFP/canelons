@@ -342,6 +342,155 @@ SECCIÓ HISTÒRIA RESPONSIVE ORDRE INVERTIT
 
 
 /************************
+SECCIÓ RECEPTA
+************************/
+
+.section--recepta {
+  padding: 2rem 0;
+
+  .section__wrapper {
+    width: 95%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      max-width: 100%;
+    }
+  }
+
+  .section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: $font-family-heading;
+    color: $heading-color;
+  }
+
+  .section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .section__text {
+    flex: 1;
+    text-align: left;
+
+    .section__subtitle {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: $heading-color;
+      font-family: $font-family-heading;
+    }
+
+    .section__list {
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        font-family: $font-family-body;
+        color: $text-color;
+      }
+    }
+  }
+
+  .section__image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+    }
+  }
+}
+
+
+
+
+/************************
+SECCIÓ VARIANTS RECEPTES
+************************/
+
+.section--variants {
+  padding: 2rem 0;
+
+  .section__wrapper {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (min-width: 768px) {
+      max-width: 90%;
+    }
+  }
+
+  .section__content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .section__text {
+    order: 1;
+    flex: 1;
+    text-align: left;
+
+    @media (min-width: 768px) {
+      order: 2;
+    }
+
+    .section__subtitle {
+      margin-bottom: 1rem;
+    }
+
+    .variants__list {
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  .section__image {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      order: 1;
+    }
+  }
+}
+
+
+
+
+
+/************************
 CARRUSEL
 ************************/
 .carousel {
