@@ -1,72 +1,10 @@
-/* Plantilla UOC d'inici 
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  font-family: $font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: $uoc-bg;
-  color: $uoc-corporate;
-}
-
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: $mqMinWidth) {
-    max-width: none;
-  }
-}
-
-.uoc-title {
-  font-family: $font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: $uoc-corporate;
-
-  @media (min-width: $mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
-.uoc-footer {
-  margin-top: 1.5rem;
-  font-size: 0.75rem;
-  text-align: center;
-}
-
-*/
-
+@import '../variables';
 
 /* Estratègia escollida: BEM + 7-1 Architecture amb Sass */
 
-/* _____________________
-VARIABLES              
-_______________________ */
-
+/************************
+RESET I CONFIGURACIÓ BASE
+************************/
 * {
   box-sizing: border-box;
 }
@@ -75,72 +13,152 @@ _______________________ */
   --primary-color: #190302;
   --accent-color: #fff;
   --text-color: #333;
-  --font-main: 'Helvetica Neue', sans-serif;
 }
 
-/* _______________________ 
+/************************ 
 FUNCIONS SCSS (SASS)   
-_______________________ */
-
-
+***********************/
 @function rem($px) {
   @return $px / 16 * 1rem;
 } 
 
-/* _______________________
-BASE                     
- _______________________ */
-
- .onepage-container {
+/************************
+LAYOUT BÀSIC
+************************/
+.page__container {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
-  
   text-align: center;
   background-color: #fff;
- 
 }
 
- body {
+body {
   margin: 0;
-  color: var(--text-color);
-  background-color: var(--accent-color);
+  color: $text-color;
+  background-color: $accent-color;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   padding: 2rem;
-  font-family: var(--font-main);
-  font-size: 1rem;
-  line-height: 1.5;
+  font-family: $font-family-body;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
 }
 
-/* ______________________
-LAYOUT                  
-_______________________ */
+/************************
+TIPOGRAFIA
+************************/
+h1, h2 {
+  font-family: $font-family-heading;
+  color: $heading-color;
+}
 
+.heading__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: $font-family-heading;
+  color: $heading-color;
+}
+
+.heading__subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-family: $font-family-heading;
+  color: $heading-color;
+}
+
+.text__paragraph {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: $font-family-body;
+  color: $text-color;
+}
+
+.text--center {
+  text-align: center;
+}
+
+/************************
+ENLLAÇOS
+************************/
+a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  font-family: $font-family-body;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/************************
+NAV (MENÚ)
+************************/
 .nav {
   background-color: var(--primary-color);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+
+    &--visible {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  &__item a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
 }
 
-.nav__list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
+@media (max-width: 768px) {
+  .nav {
+    align-items: flex-start;
+
+    &__toggle {
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    &__list {
+      display: none;
+
+      &--visible {
+        display: flex;
+      }
+    }
+  }
 }
 
-.nav__item a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/************************
+HERO
+************************/
 .hero {
   padding: 2rem;
   text-align: center;
@@ -150,34 +168,54 @@ _______________________ */
     font-size: 2rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    font-family: $font-family-heading;
   }
 
   &__subtitle {
     font-size: 1.25rem;
-    color: var(--text-color);
+    color: $text-color;
+    font-family: $font-family-body;
   }
 }
 
-.section__title {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: var(--primary-color);
+/************************
+SECCIONS
+************************/
+.section {
+  &__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: $heading-color;
+    font-family: $font-family-heading;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: $heading-color;
+    font-family: $font-family-heading;
+  }
+
+  &__list,
+  &__steps {
+    padding-left: 1.5rem;
+  }
+
+  &--spaced {
+    margin-top: 2rem;
+  }
 }
 
-.section__list,
-.section__steps {
-  padding-left: 1.5rem;
-}
-
-/* ______________________ 
-COMPONENTS              
-_______________________ */
-/* BEM per variants */
+/************************
+COMPONENTS
+************************/
 .variants__list li {
   margin-bottom: 1rem;
 }
 
-/* Responsive */
+/************************
+RESPONSIVE
+************************/
 @media (max-width: 768px) {
   .nav__list {
     flex-direction: column;
@@ -196,17 +234,3 @@ _______________________ */
     padding: 1rem;
   }
 }
-
-/* _______________________
- UTILITATS                
- _______________________ */
-.text--center {
-  text-align: center;
-}
-
-.section {
-  &--spaced {
-    margin-top: 2rem;
-  }
-}
-

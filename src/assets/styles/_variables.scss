@@ -1,12 +1,18 @@
 @use "sass:color";
 
-$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  "Segoe UI Symbol";
+/* Fonts */
 $font-family-serif: "Georgia", "Times New Roman", serif;
+$font-family-heading: 'Dancing Script', cursive;
+$font-family-body: 'Montserrat', sans-serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+/* Tipografia base */
+$font-size-base: 16px;
+$line-height-base: 1.5;
 
+/* Colors */
+$text-color: #333;
+$heading-color: #190302;
+$accent-color: #fff;
+
+/* Breakpoints */
 $mqMinWidth: 420px;

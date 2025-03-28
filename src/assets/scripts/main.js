@@ -14,3 +14,10 @@
   const university = "UOC";
   console.log(`Hello, ${university}!`);
 } )();
+
+
+// Per menú navegació toggle mobile
+
+document.querySelector('.nav__toggle').addEventListener('click', () => {
+  document.querySelector('.nav__list').classList.toggle('nav__list--visible');
+});
