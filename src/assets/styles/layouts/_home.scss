@@ -235,6 +235,7 @@ RESPONSIVE
   }
 }
 
+
 /************************
 CARRUSEL - BEM + Swiper
 ************************/
@@ -247,14 +248,15 @@ CARRUSEL - BEM + Swiper
     padding: 2rem 0;
   }
 
-  .swiper-slide {
+  // Classes externes de Swiper (no segueixen BEM)
+  .swiper-slide { // stylelint-disable-line selector-class-pattern
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0.5;
     transition: transform 0.3s ease, opacity 0.3s ease;
 
-    &.swiper-slide-active {
+    &.swiper-slide-active { // stylelint-disable-line selector-class-pattern
       transform: scale(1.1);
       opacity: 1;
     }
@@ -274,7 +276,7 @@ CARRUSEL - BEM + Swiper
   }
 
   @media (max-width: 768px) {
-    .swiper-slide {
+    .swiper-slide { // stylelint-disable-line selector-class-pattern
       opacity: 1;
       transform: scale(1);
     }
